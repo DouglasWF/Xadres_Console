@@ -60,5 +60,10 @@ namespace tabuleiro
                 throw new TabuleiroException("Posição inválida!");
             }
         }
+
+        internal object peca(object i, int j)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
