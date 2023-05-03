@@ -13,7 +13,7 @@ namespace xadrez
             this.linha = linha;
         }
 
-        public Posicao toPsicao()
+        public Posicao toPosicao()
         {
             return new Posicao(8 - linha, coluna - 'a');
         }
