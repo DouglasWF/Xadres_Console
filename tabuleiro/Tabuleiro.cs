@@ -1,12 +1,8 @@
-﻿
-
-using System.Net.Http.Headers;
-using System.Reflection.PortableExecutable;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
-    internal class Tabuleiro
+    class Tabuleiro
     {
+
         public int linhas { get; set; }
         public int colunas { get; set; }
         private Peca[,] pecas;
@@ -18,9 +14,9 @@ namespace tabuleiro
             pecas = new Peca[linhas, colunas];
         }
 
-        public Peca peca(int linhas, int colunas)
+        public Peca peca(int linha, int coluna)
         {
-            return pecas[linhas, colunas];
+            return pecas[linha, coluna];
         }
 
         public Peca peca(Posicao pos)
@@ -58,7 +54,7 @@ namespace tabuleiro
 
         public bool posicaoValida(Posicao pos)
         {
-            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0)
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
             {
                 return false;
             }
@@ -71,11 +67,6 @@ namespace tabuleiro
             {
                 throw new TabuleiroException("Posição inválida!");
             }
-        }
-
-        internal object peca(object i, int j)
-        {
-            throw new NotImplementedException();
         }
     }
 }
